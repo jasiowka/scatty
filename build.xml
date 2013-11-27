@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/xsd/assembly-1.1.1.xsd">
+    <id>build</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <moduleSets>
+        <moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>pl.jasiowka:scatty-commons</include>
+            </includes>
+            <binaries>
+                <outputDirectory>lib</outputDirectory>
+                <unpack>false</unpack>
+            </binaries>
+        </moduleSet>
+        <moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>pl.jasiowka:scatty-clipboard</include>
+            </includes>
+            <binaries>
+                <outputDirectory></outputDirectory>
+                <unpack>false</unpack>
+                <outputFileNameMapping>clipboard.jar</outputFileNameMapping>
+            </binaries>
+        </moduleSet>
+        <moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>pl.jasiowka:scatty-server</include>
+            </includes>
+            <binaries>
+                <outputDirectory></outputDirectory>
+                <unpack>false</unpack>
+                <outputFileNameMapping>scatty.jar</outputFileNameMapping>
+                <dependencySets>
+                    <dependencySet>
+                        <includes>
+                            <include>com.objectdb:objectdb</include>
+                        </includes>
+                        <unpack>false</unpack>
+                        <outputDirectory>lib</outputDirectory>
+                    </dependencySet>
+                </dependencySets>
+            </binaries>
+        </moduleSet>
+    </moduleSets>
+    <files>
+        <file>
+            <!-- <source>/src/scatty-server/target/${pom.artifactId}-${pom.version}.jar</source> -->
+            <source>src/main/resources/LICENSE</source>
+            <outputDirectory></outputDirectory>
+        </file>
+        <file>
+            <source>src/main/resources/README.md</source>
+            <outputDirectory></outputDirectory>
+        </file>
+    </files>
+    <!--
+    <fileSets>
+        <fileSet>
+            <directory>directory to be included</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>file name to be included</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>another directory to be included</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+    </fileSets>
+    -->
+</assembly>
+

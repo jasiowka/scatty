@@ -1,0 +1,15 @@
+1) do all the stuff with dependencies in META-INF,
+   so jar's can be run without problems:
+     - kick off all unnecessary libs from classpath in META-INF
+     - leave only the needed ones and give them "lib/" prefix 
+
+2) sth wrong with appWindow - it appears after a few pressed "Ctrl-D"
+   and shows all the time, not disappear after 4 sec
+
+3) add *.sh files to project and to build.xml file
+
+4) something wrong with config.xml file. it is not created or
+   created.. somewhere?
+
+5) add log4j
+
